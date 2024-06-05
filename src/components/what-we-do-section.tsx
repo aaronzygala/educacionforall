@@ -24,38 +24,6 @@ export function AboutUsSection() {
                 About Us
               </CardTitle>
             </CardHeader>
-            <CardContent className="w-[50%] ml-auto">
-              <div>
-                Educacion for All is a 501 (c)(3) organization dedicated to maximizing accessible higher education options for all. We provide the necessary resources so that all students,
-                regardless of their origin or the language their parents speak, can achieve their educational goals in the United States.
-              </div>
-              <div className="font-bold pt-12 text-2xl">
-                Our Essence
-              </div>
-              <div>
-                Education for All was born in response to the urgent need for access to information and educational opportunities for Hispanic students with limited resources.
-                Our goal is to empower these students, with information about the American educational system, to develop strong academic and extracurricular profiles, allowing them to compete on equal terms for a place at top universities.
-                We are dedicated to closing the information gap and fostering a level playing field in access to quality higher education.
-              </div>
-              <div className="font-bold pt-12 text-2xl">
-                Our Committment
-              </div>
-              <div>
-                We are committed to Hispanic students who aspire to academic and professional success,
-                ensuring that neither language nor lack of knowledge about the American educational system are insurmountable barriers.
-              </div>
-              <div className="pt-12">
-                <span className="font-bold"> Support our efforts </span>to make a meaningful difference in the lives of these young people. Your contribution can change futures.
-              </div>
-              <div className="pt-12">
-                For more information, donations and/or questions, do not hesitate to write to us at: <Link href="#" className="hover:underline">info@educacionforall.org</Link>.
-              </div>
-              <div className="pt-12">
-                <Button>
-                  Let's Keep the Connection!
-                </Button>
-              </div>
-            </CardContent>
           </Card>
         </div>
       </div>
