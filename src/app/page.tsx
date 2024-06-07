@@ -12,6 +12,8 @@ import headerImage from "@/assets/header.jpg";
 import React, { useState, useEffect } from "react";
 import { AboutUsSection } from "@/components/about-us-section";
 import { BlogSection } from "@/components/blog-section";
+import { ServicesSection } from "@/components/services-section";
+
 // import { useMediaQuery } from "@/lib/utils";
 
 export default function Home() {
@@ -57,6 +59,7 @@ export default function Home() {
       </div>
       <AboutUsSection/>
       <BlogSection/>
+      <ServicesSection/>
     </main>
   );
 }

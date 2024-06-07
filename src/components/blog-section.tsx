@@ -81,7 +81,7 @@ function BlogCard({
     category: string
 }) {
     return (
-        <Card className="text-left border-none shadow-lg hover:shadow-2xl transition-all delay-50 rounded-2xl">
+        <Card className="text-left border-none shadow-lg hover:shadow-2xl hover:cursor-pointer transition-all delay-50 rounded-2xl">
             <CardHeader className="p-0 text-4xl font-bold relative">
                 <div className="relative rounded-t-2xl h-64 w-full overflow-hidden">
                     <Image
@@ -94,7 +94,7 @@ function BlogCard({
                 </div>
             </CardHeader>
             <CardContent className="flex flex-col h-[300px]">
-                <div className="text-xl font-bold py-4">{title}</div>
+                <div className="text-xl font-bold py-4 ">{title}</div>
                 <div className="text-sm">{description}</div>
                 <div className="mt-auto">
                     <div className="text-sm text-muted-foreground">By {writtenBy}</div>

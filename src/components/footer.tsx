@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { SocialIcon } from 'react-social-icons/component'
+import 'react-social-icons/facebook'
+import 'react-social-icons/instagram'
+import 'react-social-icons/linkedin'
 
 export function Footer() {
   return (
     <main>
-      <div className="w-screen flex flex-col">
+      <div className="w-screen flex flex-col border-t">
         <div className="flex flex-row px-12 py-12 gap-12 ml-auto mr-auto grid grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col w-[96]">
             <div className="text-left text-xl text-primary font-bold pl-4">Legal</div>
@@ -33,35 +37,10 @@ export function Footer() {
           </div>
           <div className="flex flex-col w-[96]">
             <div className="text-left text-xl text-primary font-bold pl-4">Socials</div>
-            <div className="flex-row">
-              <Link
-                href="https://www.facebook.com/collegeparatodos"
-                target="_blank"
-              >
-                <Button className="justify-start w-fit hover:bg-transparent hover:text-muted-foreground" variant="ghost">
-                  <Icons.facebook size={18}/>
-                </Button>
-              </Link>
-
-              <Link
-                href="https://www.instagram.com/collegeparatodos/"
-                target="_blank"
-              >
-                <Button className="justify-start w-fit hover:bg-transparent hover:text-muted-foreground" variant="ghost">
-                  <Icons.twitter size={18} />
-                </Button>            
-              </Link>
-
-
-
-              <Link
-                href="https://www.linkedin.com/in/anamariajaramillo/"
-                target="_blank"
-              >
-                <Button className="justify-start w-fit hover:bg-transparent hover:text-muted-foreground" variant="ghost">
-                  <Icons.linkedIn size={18} />
-                </Button>
-              </Link>
+            <div className="flex flex-row gap-2 ml-2">
+                  <SocialIcon url="https://www.facebook.com/collegeparatodos" target="_blank" style={{height: 40, width: 40}}/>
+                  <SocialIcon url="https://www.instagram.com/collegeparatodos/" target="_blank" style={{height: 40, width: 40}}/>
+                  <SocialIcon url="https://www.linkedin.com/in/anamariajaramillo/" target="_blank" style={{height: 40, width: 40}}/>
 
             </div>
           </div>

@@ -60,8 +60,8 @@ export function AboutUsSection() {
                     to make a meaningful difference in the lives of these young people. Your contribution can change futures.
                 </CardDescription>
                 <CardContent className="pt-12 text-xl flex flex-col align-center">
-                    Contact Us for more information, donations, or questions:
-                    <Button variant="outline" className="ml-auto mr-auto mt-4 h-12 border-black rounded-full hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
+                    Contact us for more information, donations, or questions:
+                    <Button variant="outline" className="ml-auto mr-auto mt-4 bg-transparent h-12 border-black rounded-full hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
                         Learn More <Icons.moveRight  strokeWidth={0.8}/>
                     </Button>
                 </CardContent>

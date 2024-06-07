@@ -54,7 +54,7 @@ export function DesktopNavbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
                 <Link href="#about-us" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(currentPath === "/about-us" ? "bg-accent mr-auto" : "bg-transparent mr-auto", navigationMenuTriggerStyle())}>
+                    <NavigationMenuLink className={cn(currentPath === "#about-us" ? "bg-accent mr-auto" : "bg-transparent mr-auto", navigationMenuTriggerStyle())}>
                         About Us
                     </NavigationMenuLink>
                 </Link>
