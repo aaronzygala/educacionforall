@@ -1,55 +1,54 @@
-"use client";
-import { Separator } from "@/components/ui/separator";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription
+  CardDescription,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import headerImage from "@/assets/header.jpg";
-import React, { useState, useEffect } from "react";
 import { AboutUsSection } from "@/components/about-us-section";
 import { BlogSection } from "@/components/blog-section";
 import { ServicesSection } from "@/components/services-section";
+import { SupportSection } from "@/components/support-section";
 
-// import { useMediaQuery } from "@/lib/utils";
+const images = [
+  "/header-images/image1.jpg",
+  "/header-images/image2.jpg",
+  "/header-images/image3.jpg",
+  "/header-images/image4.jpg",
+  "/header-images/image5.jpg",
+  "/header-images/image6.jpg",
+  "/header-images/image7.jpg",
+  "/header-images/image8.jpg",
+  "/header-images/image9.jpg",
+  "/header-images/image10.jpg",
+  "/header-images/image11.jpg",
 
-export default function Home() {
-  // const isMobile = useMediaQuery('(max-width: 1024px)');
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const parallaxStyle = {
-    backgroundImage: `url(${headerImage.src})`,
-    backgroundPosition: `center ${scrollY * 0.5}px`,
-  };
-
+];
+const randomIndex = Math.floor(Math.random() * images.length);
+const randomImage = images[randomIndex];
+function Home () {
   return (
     <main className="relative min-h-screen">
-      <div
-        className="relative min-h-[70vh] bg-cover bg-center"
-        style={parallaxStyle}
-      >
-        <div className="flex items-center justify-center min-h-[70vh] backdrop-blur-0 overflow-hidden">
+      <div className="relative min-h-[85vh] flex">
+          <Image
+            src={randomImage}
+            alt="Header Background"
+            layout="fill"
+            objectFit="cover"
+            className="z-10"
+            quality={100}
+            priority
+          />
+        <div className="flex items-center justify-center h-fit w-fit ml-auto mr-auto mt-auto mb-auto rounded-xl backdrop-blur-md overflow-hidden relative z-10">
           <div className="text-center">
             <Card className="border-none bg-transparent shadow-none">
               <CardHeader>
-                <CardTitle className="text-4xl lg:text-7xl text-background drop-shadow-[0_2px_2px_rgba(0,0,0,1.0)]">
+                <CardTitle className="text-8xl lg:text-7xl text-white">
                   Educación For All
                 </CardTitle>
-                <CardDescription className="text-xl lg:text-4xl text-background drop-shadow-[0_2px_2px_rgba(0,0,0,1.0)]">
+                <CardDescription className="text-4xl lg:text-4xl text-white">
                   Cuando La Educación Triunfa, Todos Triunfamos!
                 </CardDescription>
               </CardHeader>
@@ -57,9 +56,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <AboutUsSection/>
-      <BlogSection/>
-      <ServicesSection/>
+      <AboutUsSection />
+      <BlogSection />
+      <ServicesSection />
+      <SupportSection />
     </main>
   );
-}
+};
+
+export default Home;

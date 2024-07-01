@@ -5,23 +5,24 @@ import { SocialIcon } from 'react-social-icons/component'
 import 'react-social-icons/facebook'
 import 'react-social-icons/instagram'
 import 'react-social-icons/linkedin'
+import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
-    <main>
-      <div className="w-screen flex flex-col border-t">
-        <div className="flex flex-row px-12 py-12 gap-12 ml-auto mr-auto grid grid-cols-2 lg:grid-cols-3">
+      <div className="w-screen flex flex-col pt-12">
+        <div className="flex flex-row px-12 pb-12 gap-12 ml-auto mr-auto grid grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col w-[96]">
+            
             <div className="text-left text-xl text-primary font-bold pl-4">Legal</div>
-            <Button className="w-fit justify-start mt-2 hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
-              Privacy Policy
-            </Button>
-            <Button className="w-fit justify-start hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
-              Terms of Service
-            </Button>
-            <Button className="w-fit justify-start hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
-              Responsible Disclosure
-            </Button>
+              <Button className="w-fit justify-start mt-2 hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
+                Privacy Policy
+              </Button>
+              <Button className="w-fit justify-start hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
+                Terms of Service
+              </Button>
+              <Button className="w-fit justify-start hover:bg-transparent hover:text-muted-foreground text-xs lg:text-sm" variant="ghost">
+                Responsible Disclosure
+              </Button>
           </div>
           <div className="flex flex-col">
             <div className="text-left text-xl text-primary font-bold pl-4">Contact Us</div>
@@ -45,10 +46,20 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="text-xs text-muted-foreground ml-auto mr-auto pb-6">
+        <div className="flex flex-col text-xs text-muted-foreground ml-auto mr-auto gap-4 text-center">
           &copy;2024 Educacion For All. Designed by Aaron Zygala. All rights reserved.
+          <div className="flex flex-row pb-4 gap-2">
+            <div className="align-center">Educación For All is a 501(c)3 nonprofit organization.</div>
+            <Link
+              href="https://collegeparatodos.com/"
+              target="_blank"
+            >
+              <div className="hover:underline hover:text-gray-500 hover:cursor-pointer">
+                Visit our sister company College Para Todos.
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
-    </main>
   );
 }

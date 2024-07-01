@@ -9,14 +9,12 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import logoImage from '@/assets/logo.png'
 
 export function DesktopNavbar() {
   const [scrollY, setScrollY] = React.useState(0);
   const [isVisible, setIsVisible] = React.useState(true);
-  const currentPath = usePathname();
   const scrollThreshold = 10; // Adjust this threshold as needed
 
   React.useEffect(() => {
@@ -53,29 +51,29 @@ export function DesktopNavbar() {
         <NavigationMenu className="lg:ml-auto">
           <NavigationMenuList>
             <NavigationMenuItem>
-                <Link href="#about-us" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(currentPath === "#about-us" ? "bg-accent mr-auto" : "bg-transparent mr-auto", navigationMenuTriggerStyle())}>
+                <Link href="/#about-us" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle())}>
                         About Us
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <Link href="/programs" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(currentPath === "/scheduling" ? "bg-accent mr-auto" : "bg-transparent mr-auto", navigationMenuTriggerStyle())}>
-                      Articles
+                <Link href="/blog" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle())}>
+                      Blog
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <Link href="/scheduling" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(currentPath === "/scheduling" ? "bg-accent mr-auto" : "bg-transparent mr-auto", navigationMenuTriggerStyle())}>
-                      Schedule a Consultation
+                <Link href="/programs" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle())}>
+                      Programs
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <Link href="/contact-us" legacyBehavior>
-                    <NavigationMenuLink className={cn(currentPath === "/contact-us" ? "bg-accent mr-auto cursor-pointer" : "bg-transparent mr-auto cursor-pointer", navigationMenuTriggerStyle())}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle())}>
                       Contact Us
                     </NavigationMenuLink>
                 </Link>

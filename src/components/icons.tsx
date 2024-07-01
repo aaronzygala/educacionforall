@@ -34,6 +34,7 @@ import {
     Facebook,
     Instagram,
     MoveRight,
+    MoveLeft,
     type Icon as LucideIcon,
     Linkedin,
   } from "lucide-react"
@@ -74,6 +75,7 @@ import {
     calendarDays: CalendarDays,
     notebook:Notebook,
     linkedIn: Linkedin,
+    moveLeft: MoveLeft,
     gitHub: ({ ...props }: LucideProps) => (
       <svg
         aria-hidden="true"

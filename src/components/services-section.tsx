@@ -16,7 +16,7 @@ import { Icons } from "./icons";
 
 export function ServicesSection() {
   return (
-    <main id="about-us">
+    <main>
       <div className="min-w-screen flex flex-col justify-center">
         <div className="flex flex-col justify-center gap-4 py-12 px-52">
           <div className="text-center text-5xl font-bold mb-6">Our Services</div>
@@ -81,7 +81,7 @@ function ServiceCard({
           {title}
         </div>
         <div className="opacity-0 group-hover:opacity-100 text-sm">{description}</div>
-        <div className="text-lg ml-auto mr-auto mt-8 text-sky-300 flex flex-row">Learn More <Icons.chevronRight strokeWidth={1} size={18} className="mt-auto mb-auto"/></div>
+        <div className="text-sm ml-auto mr-auto mt-8 text-sky-400 flex flex-row hover:underline">Learn More <Icons.chevronRight strokeWidth={1} size={18} className="mt-auto mb-auto"/></div>
       </CardContent>
     </Card>
   );

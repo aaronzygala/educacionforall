@@ -1,3 +1,4 @@
+// "use client"
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { useState, useEffect } from 'react';
@@ -6,7 +7,15 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
+const formatDate = (dateString: string | number | Date) => {
+  const parsedDate = new Date(dateString);
+  const options = {
+    year: 'numeric',
+    month: 'long', // Use 'long' for full month name
+    day: 'numeric',
+  };
+  return new Intl.DateTimeFormat('en-US', options).format(parsedDate);
+};
 // function useMediaQuery(query: string) {
 //   const [matches, setMatches] = useState(false);
 
@@ -23,4 +32,4 @@ function cn(...inputs: ClassValue[]) {
 //   return matches;
 // }
 
-export {cn};
+export { cn, formatDate };
