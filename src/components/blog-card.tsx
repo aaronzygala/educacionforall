@@ -15,15 +15,15 @@ export function BlogCard({
 }) {
     return (
         <Link href={"post/" + blogPost.uri}>
-            <Card className="text-left border-none shadow-lg hover:shadow-2xl hover:cursor-pointer transition-all delay-50 rounded-2xl w-[100%]">
+            <Card className="text-left rounded-md border-none shadow-lg hover:shadow-2xl hover:cursor-pointer transition-all delay-50 w-[100%]">
                 <CardHeader className="p-0 text-4xl font-bold relative">
-                    <div className="relative rounded-t-2xl h-64 w-full overflow-hidden">
+                    <div className="relative rounded-t-md h-64 w-full overflow-hidden">
                         <Image
                             src={blogPost.featuredImage.sourceUrl}
                             alt={"Blog image"}
                             width={200}
                             height={200}
-                            className="absolute top-0 left-0 h-full w-full object-cover"
+                            className="absolute top-0 left-0 h-full w-full object-cover rounded-t-md"
                         />
                         {/* <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-gray-950 to-transparent opacity-70 rounded-t-2xl"></div> */}
                         {/* <Badge className="absolute ml-4 my-4 rounded-sm bg-[#4D8264]"></Badge> */}

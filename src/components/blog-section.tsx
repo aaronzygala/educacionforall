@@ -109,7 +109,7 @@ export async function BlogSection() {
             </Suspense>
             <div className="ml-auto mr-auto mt-6">
                 <Link href="/blog">
-                    <Button variant="outline" className="h-12 w-30 border-black rounded-full hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
+                    <Button variant="outline" className="h-12 w-30 border-black rounded-md hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
                         View All <Icons.moveRight  strokeWidth={0.8}/>
                     </Button>
                 </Link>

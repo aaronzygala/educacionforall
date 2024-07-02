@@ -24,10 +24,10 @@ export function ServicesSection() {
             <ServiceCard
               title={"Parent Workshops"}
               description={
-                "We know that family involvement is key to student success.\
-                 For this reason, we offer free seminars and workshops designed \
-                 so that you can accompany and support your children on their path to university,\
-                 from the beginning of their high school, because going to university is a family decision."
+                "Family involvement is key to student success.\
+                 That's why we offer free seminars and workshops \
+                 so that you can accompany and support your children on their path to university.\
+                 Because going to university is a family decision."
               }
               image={serviceImage}
             />
@@ -50,6 +50,11 @@ export function ServicesSection() {
               image={serviceImage3}
             />
           </div>
+          <div className="ml-auto mr-auto">
+          <Button variant="outline" className="ml-auto mr-auto mt-4 bg-transparent h-12 border-black rounded-md hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
+              Learn More <Icons.moveRight  strokeWidth={0.8}/>
+          </Button>
+        </div>
         </div>
       </div>
     </main>
@@ -66,22 +71,21 @@ function ServiceCard({
   image: StaticImageData;
 }) {
   return (
-    <Card className="group text-left border-none shadow-none hover:cursor-pointer transition-all rounded-none delay-50 overflow-hidden h-[300px]">
+    <Card className="group text-left border-none rounded-md shadow-lg">
       <CardHeader className="p-0 text-4xl font-bold relative">
         <div className="relative h-64 w-full">
           <Image
             src={image}
             alt={"Service image"}
-            className="absolute top-0 left-0 h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:translate-y-[-100%]"
+            className="absolute top-0 left-0 h-full w-full object-cover rounded-t-md"
           />
         </div>
       </CardHeader>
-      <CardContent className="flex flex-col transition-all duration-300 ease-in-out transform group-hover:translate-y-[-90%] w-96">
-        <div className="text-xl font-bold py-4 opacity-100">
-          {title}
+      <CardContent className="flex flex-col w-96">
+        <div className="justify-center text-center text-xl font-bold py-2 ">
+            {title}
         </div>
-        <div className="opacity-0 group-hover:opacity-100 text-sm">{description}</div>
-        <div className="text-sm ml-auto mr-auto mt-8 text-sky-400 flex flex-row hover:underline">Learn More <Icons.chevronRight strokeWidth={1} size={18} className="mt-auto mb-auto"/></div>
+        <div className="text-sm">{description}</div>
       </CardContent>
     </Card>
   );

@@ -19,7 +19,7 @@ export function AboutUsSection() {
             <Image
                 src={ninaImage}
                 alt={"Nina at a University"}
-                className="h-96 w-96"
+                className="h-96 w-96 rounded-md"
             />  
             <AboutUsCard
                 header={"About Us"}
@@ -37,14 +37,14 @@ export function AboutUsSection() {
             <Image
                 src={ninaImage}
                 alt={"Nina at a University"}
-                className="h-96 w-96"
+                className="h-96 w-96 rounded-md"
             />  
         </div>
         <div className="flex flex-row justify-center gap-24 py-12 px-52">
             <Image
                 src={ninaImage}
                 alt={"Nina at a University"}
-                className="h-96 w-96"
+                className="h-96 w-96 rounded-md"
             />  
             <AboutUsCard
                 header={"Our Committment"}
@@ -60,7 +60,7 @@ export function AboutUsSection() {
 
 function AboutUsCard({header, body}: {header:string, body:string}){
     return(
-        <Card className="w-[50%] mt-auto mb-auto text-left bg-transparent border-none shadow-none rounded-2xl">
+        <Card className="w-[50%] mt-auto mb-auto text-left bg-transparent border-none shadow-none rounded-md">
             <CardHeader className="text-4xl font-bold">
                 {header}
             </CardHeader>

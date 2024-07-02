@@ -89,26 +89,28 @@ export default async function PostDetails({ params } :{params: Post}) {
   return (
       <Suspense fallback={<Loading />}>
 
-          <div className="flex ml-auto mr-auto justify-center mt-24 mx-24 relative bg-muted">
-        <div className="absolute right-[75%] top-2">  
+    <div className="flex ml-auto mr-auto justify-center mt-24 pt-4 mx-24 relative bg-muted ">
+        {/* <div className="absolute right-[85%] top-10">  
           <Link href="/blog" className="flex flex-row">
-            <Button variant="outline" className="h-12 w-30 border-black rounded-full bg-muted hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
+            <Button variant="outline" className="h-12 w-30 border-black rounded-md bg-muted hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
             <Icons.moveLeft strokeWidth={0.8} /> Return to Blog
             </Button>
         </Link>
-        </div>
+        </div> */}
           <Card className="flex flex-col w-[60%] border-none shadow-none bg-muted" key={post.uri}>
 
             <CardHeader className="text-center my-12 flex flex-col gap-8">
                     <CardTitle className="text-5xl">{post.title}</CardTitle>
-                    <CardDescription className="text-lg flex flex-row justify-center gap-4">
-                        <span className="hover:underline">
-                            <Link href={post.author.node.uri}>
-                                {post.author.node.name}
-                            </Link>
-                        </span> | 
-                        <span>{formatDate(post.date)}</span> | 
-                        <span>{estimateReadingTime(post.content)}</span>
+                    <CardDescription className="text-lg flex flex-col justify-center gap-4">
+                        <span className="flex flex-row justify-center gap-4 ml-auto mr-auto">
+                            <span className="hover:underline">
+                                <Link href={post.author.node.uri}>
+                                    {post.author.node.name}
+                                </Link>
+                            </span> | 
+                            <span>{formatDate(post.date)}</span> | 
+                            <span>{estimateReadingTime(post.content)}</span>
+                        </span>
                     </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col ml-auto mr-auto gap-12">

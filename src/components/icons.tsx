@@ -35,6 +35,7 @@ import {
     Instagram,
     MoveRight,
     MoveLeft,
+    ChevronUp,
     type Icon as LucideIcon,
     Linkedin,
   } from "lucide-react"
@@ -76,6 +77,7 @@ import {
     notebook:Notebook,
     linkedIn: Linkedin,
     moveLeft: MoveLeft,
+    chevronUp: ChevronUp,
     gitHub: ({ ...props }: LucideProps) => (
       <svg
         aria-hidden="true"
