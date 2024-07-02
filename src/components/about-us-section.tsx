@@ -8,18 +8,22 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ninaImage from "@/assets/Nina-universitaria.jpeg";
+import aboutUs1 from "@/assets/aboutus1.jpg";
+import aboutUs2 from "@/assets/aboutus2.jpg";
+import aboutUs3 from "@/assets/aboutus3.jpg";
+
 import { Icons } from "./icons";
 
 export function AboutUsSection() {
   return (
     <main id="about-us">
       <div className="min-w-screen flex flex-col justify-center relative"> {/* Added relative positioning here */}
-        <div className="flex flex-row justify-center gap-24 bg-muted py-12 px-52">
+        <div className="flex flex-row justify-center gap-12 bg-muted py-12 px-52">
             <Image
-                src={ninaImage}
-                alt={"Nina at a University"}
-                className="h-96 w-96 rounded-md"
+                src={aboutUs3}
+                alt={""}
+                className="w-1/2 h-96 object-contain rounded-md"
+                style={{borderRadius: "6px"}}
             />  
             <AboutUsCard
                 header={"About Us"}
@@ -31,20 +35,22 @@ export function AboutUsSection() {
             <AboutUsCard
                 header={"Our Mission"}
                 body={"Educación for All  was born in response to the urgent need for access to information and educational opportunities for Hispanic students with limited resources. \
-                Our goal is to empower these students, with information about the American educational system, to develop strong academic and extracurricular profiles, allowing them to compete on equal terms for a place at top universities. \
-                We are dedicated to closing the information gap and fostering a level playing field in access to quality higher education."}
+                Our goal is to empower and guide these students through American education system allowing them to compete on equal terms for a place at top universities."} 
+                // We are dedicated to closing the information gap and fostering a level playing field in access to quality higher education."}
             />
             <Image
-                src={ninaImage}
-                alt={"Nina at a University"}
-                className="h-96 w-96 rounded-md"
+                src={aboutUs2}
+                alt={""}
+                className="w-1/2 h-96 object-contain rounded-md"
+                style={{borderRadius: "6px"}}
             />  
         </div>
         <div className="flex flex-row justify-center gap-24 py-12 px-52">
             <Image
-                src={ninaImage}
-                alt={"Nina at a University"}
-                className="h-96 w-96 rounded-md"
+                src={aboutUs1}
+                alt={""}
+                className="w-1/2 h-96 object-contain rounded-md"
+                style={{borderRadius: "6px"}}
             />  
             <AboutUsCard
                 header={"Our Committment"}
@@ -60,7 +66,7 @@ export function AboutUsSection() {
 
 function AboutUsCard({header, body}: {header:string, body:string}){
     return(
-        <Card className="w-[50%] mt-auto mb-auto text-left bg-transparent border-none shadow-none rounded-md">
+        <Card className="w-[100%] mt-auto mb-auto text-left bg-transparent border-none shadow-none rounded-md">
             <CardHeader className="text-4xl font-bold">
                 {header}
             </CardHeader>

@@ -24,6 +24,8 @@ const images = [
   "/header-images/image9.jpg",
   "/header-images/image10.jpg",
   "/header-images/image11.jpg",
+  "/header-images/image12.jpg",
+  "/header-images/image13.jpg",
 
 ];
 const randomIndex = Math.floor(Math.random() * images.length);
