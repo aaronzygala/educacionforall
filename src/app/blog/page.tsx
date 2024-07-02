@@ -1,7 +1,5 @@
 "use client";
 import axios from 'axios';
-import { Suspense } from "react";
-import Loading from "@/components/loading";
 import { Post } from "@/lib/types";
 import { BlogCard } from "@/components/blog-card";
 import {
@@ -13,7 +11,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import React from "react";
-import { tailChase } from 'ldrs'
+import Loader from '@/components/loader/loader';
 
 async function queryPaginatedPosts(perPage = 1, after = "") {
   const query = `
@@ -51,7 +49,7 @@ async function queryPaginatedPosts(perPage = 1, after = "") {
         `;
 
   try {
-    const res = await axios.post(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
+    const res = await axios.post(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!,
       {
         query: query,
         variables: { perPage, after }
@@ -126,7 +124,6 @@ export default function BlogPage() {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-  tailChase.register()
 
   return (
     <div className="min-w-screen flex flex-col justify-center">
@@ -137,11 +134,7 @@ export default function BlogPage() {
                 {isLoading ? 
                     <div className="flex flex-col pt-32 text-muted-foreground col-span-3 ml-auto mr-auto mt-auto mb-auto h-[400px]">
                         <div className="ml-auto mr-auto">
-                            <l-tail-chase
-                                size="40"
-                                speed="1.75" 
-                                color="gray" 
-                            ></l-tail-chase>
+                            <Loader/>
                         </div>
                     </div> :
 

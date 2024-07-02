@@ -13,7 +13,7 @@ const formatDate = (dateString: string | number | Date) => {
     year: 'numeric',
     month: 'long', // Use 'long' for full month name
     day: 'numeric',
-  };
+  } satisfies Intl.DateTimeFormatOptions;
   return new Intl.DateTimeFormat('en-US', options).format(parsedDate);
 };
 // function useMediaQuery(query: string) {

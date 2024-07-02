@@ -1,4 +1,4 @@
-import Loading from "@/components/loading";
+import Loading from "@/components/loader/loader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Suspense } from "react";
 import {formatDate} from "@/lib/utils"
@@ -8,8 +8,9 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import './blog-post.css'
+import { Post } from "@/lib/types";
 
-async function getPost(uri) {
+async function getPost(uri: string) {
   const query = `
   query GetPostByUri($uri: ID!) {
     post(id: $uri, idType: URI) {
@@ -37,7 +38,7 @@ async function getPost(uri) {
     uri,
   };
 
-  const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
+  const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -65,9 +66,9 @@ function estimateReadingTime(article: string){
     return Math.ceil(numWords/200).toString() + " minute read";
 }
 
-export default async function PostDetails({ params }) {
+export default async function PostDetails({ params } :{params: Post}) {
   const post = await getPost(params.uri);
-  function processContent(htmlString) {
+  function processContent(htmlString: string) {
     // Regex to match `<img>` tags with the `src` attribute
     const imgPattern = /<img\s+[^>]*?src="([^"]+)"[^>]*?\/>/gi;
   
