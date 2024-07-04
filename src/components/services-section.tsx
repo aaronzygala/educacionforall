@@ -19,7 +19,9 @@ export function ServicesSection() {
     <main>
       <div className="min-w-screen flex flex-col justify-center">
         <div className="flex flex-col justify-center gap-4 py-12 px-52">
-          <div className="text-center text-5xl font-bold mb-6">Our Services</div>
+          <div className="text-center text-5xl font-bold mb-6">
+            Our Services
+          </div>
           <div className="flex flex-row gap-12 ml-auto mr-auto">
             <ServiceCard
               title={"Parent Workshops"}
@@ -51,10 +53,13 @@ export function ServicesSection() {
             />
           </div>
           <div className="ml-auto mr-auto">
-          <Button variant="outline" className="ml-auto mr-auto mt-4 bg-transparent h-12 border-black rounded-md hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out">
-              Learn More <Icons.moveRight  strokeWidth={0.8}/>
-          </Button>
-        </div>
+            <Button
+              variant="outline"
+              className="ml-auto mr-auto mt-4 bg-transparent h-12 border-black rounded-md hover:bg-slate-950 hover:text-white gap-4 hover:gap-8 transition-all delay-100 ease-out"
+            >
+              Learn More <Icons.moveRight strokeWidth={0.8} />
+            </Button>
+          </div>
         </div>
       </div>
     </main>
@@ -82,8 +87,8 @@ function ServiceCard({
         </div>
       </CardHeader>
       <CardContent className="flex flex-col w-96">
-        <div className="justify-center text-center text-xl font-bold py-2 ">
-            {title}
+        <div className="justify-center text-center text-xl font-bold py-2 pt-4">
+          {title}
         </div>
         <div className="text-sm">{description}</div>
       </CardContent>

@@ -26,23 +26,22 @@ const images = [
   "/header-images/image11.jpg",
   "/header-images/image12.jpg",
   "/header-images/image13.jpg",
-
 ];
 const randomIndex = Math.floor(Math.random() * images.length);
 const randomImage = images[randomIndex];
-function Home () {
+function Home() {
   return (
     <main className="relative min-h-screen">
       <div className="relative min-h-[85vh] flex">
-          <Image
-            src={randomImage}
-            alt="Header Background"
-            layout="fill"
-            objectFit="cover"
-            className="z-10"
-            quality={100}
-            priority
-          />
+        <Image
+          src={randomImage}
+          alt="Header Background"
+          layout="fill"
+          objectFit="cover"
+          className="z-10"
+          quality={100}
+          priority
+        />
         <div className="flex items-center justify-center h-fit w-fit ml-auto mr-auto mt-auto mb-auto rounded-xl backdrop-blur-md overflow-hidden relative z-10">
           <div className="text-center">
             <Card className="border-none bg-transparent shadow-none">
@@ -64,6 +63,6 @@ function Home () {
       <SupportSection />
     </main>
   );
-};
+}
 
 export default Home;
