@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Roboto as FontSans } from "next/font/google";
 import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 import { DesktopNavbar } from "@/components/navigation/desktop-nav";
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: "400",
 });
 
 export default function RootLayout({

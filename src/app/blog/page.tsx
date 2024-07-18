@@ -79,13 +79,15 @@ export default function BlogPage() {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [hasNextPage, setHasNextPage] = React.useState(false);
   const [cursors, setCursors] = React.useState<string[]>([""]);
+  const cursorsRef = React.useRef(cursors);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const perPage = 6; // Posts per page
+
 
   React.useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const after = cursors[currentPage - 1];
+      const after = cursorsRef.current[currentPage - 1];
       await queryPaginatedPosts(perPage, after)
         .then((fetchedPosts) => {
           const outputList: Post[] = fetchedPosts.edges.map((post: any) => ({
@@ -105,14 +107,15 @@ export default function BlogPage() {
               lastName: post.node.author.node.lastName,
             },
           }));
-
+  
           setRecentPosts(outputList);
           setHasNextPage(fetchedPosts.pageInfo.hasNextPage);
           if (fetchedPosts.edges.length > 0) {
-            const newCursors = [...cursors];
+            const newCursors = [...cursorsRef.current];
             newCursors[currentPage] =
               fetchedPosts.edges[fetchedPosts.edges.length - 1].cursor;
-            setCursors(newCursors);
+            cursorsRef.current = newCursors;  // Update the ref
+            setCursors(newCursors);  // Update the state
           }
           setIsLoading(false);
         })
@@ -120,9 +123,10 @@ export default function BlogPage() {
           console.error("Error! ", e);
         });
     };
-
+  
     fetchData();
   }, [currentPage]);
+  
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);

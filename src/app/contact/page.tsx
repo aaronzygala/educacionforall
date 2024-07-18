@@ -97,7 +97,7 @@ export default function ContactUs() {
                 Join our newsletter
               </CardTitle>
               <CardDescription>
-                Leave your email below and you'll receive our weekly email,
+                Leave your email below and you&apos;ll receive our weekly email,
                 including any information regarding our workshops, programs, or
                 the FAFSA.
               </CardDescription>
@@ -122,7 +122,7 @@ export default function ContactUs() {
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-row">
                         <span className="bg-primary p-3 rounded-full h-fit w-fit"><Icons.phone className="text-background"/></span>
-                        <span className="mt-auto mb-auto ml-4">
+                        <span className="mt-auto mb-auto pl-4 ">
                             +1 (555)-555-5555
                         </span>
                     </div>

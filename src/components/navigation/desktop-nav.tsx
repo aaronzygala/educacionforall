@@ -68,18 +68,18 @@ export function DesktopNavbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/programs" legacyBehavior passHref>
+              <Link href="/services" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(navigationMenuTriggerStyle())}
                 >
-                  Programs
+                  Services
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/contact" legacyBehavior>
                 <NavigationMenuLink
-                  className={cn(navigationMenuTriggerStyle())}
+                  className={cn(navigationMenuTriggerStyle(), "hover:cursor-pointer")}
                 >
                   Contact Us
                 </NavigationMenuLink>
